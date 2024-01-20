@@ -28,7 +28,8 @@ class SubmenuSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Submenu
-        fields = ('id', 'title', 'description', 'menu', 'dishes_count')
+        fields = ('id', 'title', 'description', 'dishes_count', 'menu')
+        read_only_fields = ('menu',)
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
